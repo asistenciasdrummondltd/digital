@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia - Drummond Ltd</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado animado con iluminación -->
+        <header class="header-animado">
+            <div class="logo-container">
+                <img src="Logo1.png" alt="Logo Drummond" class="logo">
+            </div>
+            <h1 class="titulo-principal">
+                <span class="titulo-palabra">Registro</span>
+                <span class="titulo-palabra">de</span>
+                <span class="titulo-palabra">Asistencia</span>
+            </h1>
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1"></div>
+                <div class="progress-step" data-step="2"></div>
+                <div class="progress-step" data-step="3"></div>
+                <div class="progress-step" data-step="4"></div>
+            </div>
+        </header>
+
+        <!-- Formulario multipasos -->
+        <form id="formularioAsistencia" class="formulario-multipaso">
+            <!-- Paso 1 - Información general -->
+            <div class="form-paso active" data-step="1">
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="hora">Hora</label>
+                    <input type="time" id="hora" name="hora" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="area">Área / Sede</label>
+                    <select id="area" name="area" required>
+                        <option value="">Seleccione un área...</option>
+                        <option value="Mina Pribbenow">Mina Pribbenow</option>
+                        <option value="Mina El Descanso">Mina El Descanso</option>
+                        <option value="Puerto Drummond">Puerto Drummond</option>
+                        <option value="Oficinas Bogotá">Oficinas Bogotá</option>
+                        <option value="Oficinas Valledupar">Oficinas Valledupar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="departamento">Departamento / Proceso</label>
+                    <select id="departamento" name="departamento" required>
+                        <option value="">Seleccione un departamento...</option>
+                        <option value="Operaciones Mineras">Operaciones Mineras</option>
+                        <option value="Mantenimiento">Mantenimiento</option>
+                        <option value="Logística">Logística</option>
+                        <option value="Seguridad Industrial">Seguridad Industrial</option>
+                        <option value="Recursos Humanos">Recursos Humanos</option>
+                        <option value="Medio Ambiente">Medio Ambiente</option>
+                        <option value="Administración">Administración</option>
+                    </select>
+                </div>
+                <div class="botones-navegacion">
+                    <button type="button" class="btn-siguiente">Siguiente</button>
+                </div>
+            </div>
+
+            <!-- Paso 2 - Detalles de la actividad -->
+            <div class="form-paso" data-step="2">
+                <div class="form-group">
+                    <label for="tipoActividad">Tipo de Actividad</label>
+                    <select id="tipoActividad" name="tipoActividad" required>
+                        <option value="">Seleccione el tipo...</option>
+                        <option value="Capacitación Formal">Capacitación Formal</option>
+                        <option value="Charla de 5 Minutos">Charla de 5 Minutos</option>
+                        <option value="Inducción">Inducción</option>
+                        <option value="Reunión de Seguridad">Reunión de Seguridad</option>
+                        <option value="Taller Práctico">Taller Práctico</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="temaPrincipal">Tema Principal</label>
+                    <input type="text" id="temaPrincipal" name="temaPrincipal" required>
+                </div>
+                <div class="form-group">
+                    <label for="actividad">Nombre de la Capacitación</label>
+                    <input type="text" id="actividad" name="actividad" list="listaActividades" required>
+                    <datalist id="listaActividades">
+                        <option value="Inducción de Seguridad">
+                        <option value="Manejo Defensivo">
+                        <option value="Trabajo en Alturas">
+                        <option value="Espacios Confinados">
+                        <option value="Manejo de Sustancias Peligrosas">
+                        <option value="Primeros Auxilios">
+                        <option value="Protección contra Incendios">
+                        <option value="Procedimientos de Emergencia">
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <label for="encargado">Encargado/a de la Capacitación</label>
+                    <select id="encargado" name="encargado" required>
+                        <option value="">Seleccione...</option>
+                        <option value="Diego Fuentes">Diego Fuentes</option>
+                        <option value="Sandra Rojas">Sandra Rojas</option>
+                        <option value="Pedro Mendoza">Pedro Mendoza</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="botones-navegacion">
+                    <button type="button" class="btn-anterior">Anterior</button>
+                    <button type="button" class="btn-siguiente">Siguiente</button>
+                </div>
+            </div>
+
+            <!-- Paso 3 - Participante -->
+            <div class="form-paso" data-step="3">
+                <div class="form-group">
+                    <label for="nombre">Nombres y Apellidos</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="cedula">Cédula de Ciudadanía</label>
+                    <input type="number" id="cedula" name="cedula" required>
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" name="cargo" required>
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentario u Observación (opcional)</label>
+                    <textarea id="comentario" name="comentario" rows="3"></textarea>
+                </div>
+                <div class="botones-navegacion">
+                    <button type="button" class="btn-anterior">Anterior</button>
+                    <button type="button" class="btn-siguiente">Siguiente</button>
+                </div>
+            </div>
+
+            <!-- Paso 4 - Confirmación final -->
+            <div class="form-paso" data-step="4">
+                <p>Por favor verifica que tus datos sean correctos antes de enviar.</p>
+                <div class="form-group">
+                    <label for="correo">Correo electrónico (opcional, para recibir material)</label>
+                    <input type="email" id="correo" name="correo">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="confirmacionDatos" required>
+                        Confirmo que la información suministrada es correcta y completa.
+                    </label>
+                </div>
+                <div class="botones-navegacion">
+                    <button type="button" class="btn-anterior">Anterior</button>
+                    <button type="submit" class="btn-registrar">
+                        <span class="btn-texto">Registrar Asistencia</span>
+                        <span class="btn-icono">✓</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Mensaje de éxito -->
+        <div id="mensajeExito" class="mensaje-exito hidden">
+            <div class="mensaje-contenido">
+                <div class="mensaje-icono">✓</div>
+                <h2>¡Registro Exitoso!</h2>
+                <p>La asistencia ha sido registrada correctamente.</p>
+                <button type="button" class="btn-cerrar">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
